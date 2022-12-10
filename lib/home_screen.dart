@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_pad_flutter/add_note_screen.dart';
 import 'package:note_pad_flutter/notes_list.dart';
 import 'package:note_pad_flutter/widgets/single_note.dart';
 
@@ -14,7 +15,7 @@ class HomeScreen extends StatelessWidget {
         title: const Text(
           'My Notes',
           style: TextStyle(
-            color: Colors.black,
+            //color: Colors.black,
             fontSize: 24,
             fontWeight: FontWeight.w900,
           ),
@@ -35,8 +36,16 @@ class HomeScreen extends StatelessWidget {
         },
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Theme.of(context).primaryColor,
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const AddNoteScreen(),
+            ),
+          );
+        },
         child: const Icon(Icons.add),
-        onPressed: () {},
       ),
     );
   }

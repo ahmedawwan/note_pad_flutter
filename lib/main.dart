@@ -12,8 +12,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Notepad',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      theme: ThemeData.dark().copyWith(
+        primaryColor: const Color(0xFFEB1555),
+        scaffoldBackgroundColor: const Color(0xff0a0e21),
+        colorScheme: ColorScheme.fromSwatch().copyWith(),
       ),
       home: const HomeScreen(),
     );
